@@ -4,7 +4,6 @@
 <head>
 
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Nextype Pashto Keyboard</title>
@@ -13,29 +12,28 @@
 
 <style>
 
+@font-face{
+font-family:PashtoFont;
+src:url("pashto.ttf");
+}
+
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial,"Noto Naskh Arabic",sans-serif;
+font-family:PashtoFont,Arial,sans-serif;
 }
-
 
 body{
-
 background:#f5fbff;
 color:#222;
-
 }
-
-
 
 header{
 
 background:linear-gradient(135deg,#00AEFE,#4DD3FF);
 
 color:white;
-
 text-align:center;
 
 padding:40px 20px;
@@ -45,11 +43,9 @@ border-radius:0 0 40px 40px;
 }
 
 
-
 .icon{
 
 width:120px;
-
 height:120px;
 
 border-radius:25px;
@@ -61,25 +57,20 @@ box-shadow:0 8px 20px rgba(0,0,0,.25);
 }
 
 
-
 h1{
 
 margin-top:15px;
-
 font-size:30px;
 
 }
 
 
-
 header p{
 
 margin-top:10px;
-
 font-size:18px;
 
 }
-
 
 
 .download{
@@ -105,6 +96,80 @@ font-size:18px;
 }
 
 
+.stats{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+
+gap:15px;
+
+max-width:600px;
+
+margin:30px auto 0;
+
+}
+
+
+.stat{
+
+background:white;
+
+color:#00AEFE;
+
+padding:20px;
+
+border-radius:20px;
+
+box-shadow:0 5px 15px rgba(0,0,0,.15);
+
+}
+
+
+.stat h2{
+
+font-size:30px;
+
+}
+
+
+.like-box{
+
+margin-top:20px;
+
+}
+
+
+.like-btn{
+
+border:none;
+
+background:white;
+
+font-size:40px;
+
+width:80px;
+
+height:80px;
+
+border-radius:50%;
+
+cursor:pointer;
+
+box-shadow:0 5px 15px rgba(0,0,0,.15);
+
+transition:.3s;
+
+}
+
+
+.like-btn.active{
+
+background:#ff4d6d;
+
+color:white;
+
+}
 
 
 .container{
@@ -118,7 +183,6 @@ padding:30px 20px;
 }
 
 
-
 .title{
 
 text-align:center;
@@ -128,7 +192,6 @@ color:#00AEFE;
 margin:25px 0;
 
 }
-
 
 
 .box{
@@ -146,7 +209,6 @@ text-align:center;
 }
 
 
-
 .features{
 
 display:grid;
@@ -156,7 +218,6 @@ grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
 gap:15px;
 
 }
-
 
 
 .card{
@@ -174,14 +235,11 @@ box-shadow:0 5px 15px rgba(0,0,0,.1);
 }
 
 
-
 .card h3{
 
 color:#00AEFE;
 
 }
-
-
 
 
 .gallery{
@@ -193,7 +251,6 @@ grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
 gap:15px;
 
 }
-
 
 
 .gallery img{
@@ -211,7 +268,6 @@ padding:5px;
 }
 
 
-
 footer{
 
 margin-top:30px;
@@ -226,9 +282,8 @@ padding:20px;
 
 }
 
-
-
 </style>
+
 
 </head>
 
@@ -252,12 +307,62 @@ Nextype Pashto Keyboard
 </p>
 
 
-
-<a href="Nextype.apk" class="download">
+<a href="Nextype.apk" class="download" id="downloadBtn">
 
 ⬇ Download APK
 
 </a>
+
+
+
+<div class="stats">
+
+
+<div class="stat">
+
+<h2 id="downloads">
+0
+</h2>
+
+<p>
+📥 ډاونلوډونه
+</p>
+
+</div>
+
+
+<div class="stat">
+
+<h2 id="favorites">
+0
+</h2>
+
+<p>
+❤️ خوښونې
+</p>
+
+</div>
+
+
+</div>
+
+
+
+<div class="like-box">
+
+<p>
+که مو اپ خوښ شوی وي، لاندې زړه کلیک کړئ ❤️
+</p>
+
+<br>
+
+<button id="likeBtn" class="like-btn">
+
+♡
+</button>
+
+</div>
+
 
 
 </header>
@@ -285,7 +390,6 @@ Emoji، Clipboard او Offline استعمال ملاتړ کوي.
 
 
 
-
 <h2 class="title">
 ځانګړتیاوې
 </h2>
@@ -296,37 +400,58 @@ Emoji، Clipboard او Offline استعمال ملاتړ کوي.
 
 
 <div class="card">
+
 <h3>⌨ پښتو Keyboard</h3>
-<p>اسانه پښتو لیکل</p>
+
+<p>
+اسانه پښتو لیکل
+</p>
+
 </div>
 
 
 <div class="card">
+
 <h3>😀 Emoji</h3>
-<p>ښکلي Emoji</p>
+
+<p>
+ښکلي Emoji
+</p>
+
 </div>
 
 
 <div class="card">
+
 <h3>📋 Clipboard</h3>
-<p>متن ذخیره کول</p>
+
+<p>
+متن ذخیره کول
+</p>
+
 </div>
 
 
 <div class="card">
+
 <h3>⚡ Offline</h3>
-<p>بې انټرنېټه کار</p>
+
+<p>
+بې انټرنېټه کار
+</p>
+
 </div>
 
 
 </div>
-
 
 
 
 
 <h2 class="title">
+
 Screenshots
+
 </h2>
 
 
@@ -350,9 +475,7 @@ Screenshots
 </div>
 
 
-
 </div>
-
 
 
 
@@ -362,6 +485,180 @@ Nextype Pashto Keyboard © 2026
 
 </footer>
 
+
+
+
+<script type="module">
+
+
+import { initializeApp } 
+from "https://www.gstatic.com/firebasejs/12.16.0/firebase-app.js";
+
+
+import { 
+getFirestore,
+doc,
+onSnapshot,
+updateDoc,
+increment
+}
+from "https://www.gstatic.com/firebasejs/12.16.0/firebase-firestore.js";
+
+
+
+const firebaseConfig = {
+
+apiKey: "AIzaSyAbMZ2BYpUrvhh02luFv7CoJHMM_4RLJFE",
+
+authDomain: "nextype-7b33e.firebaseapp.com",
+
+databaseURL: "https://nextype-7b33e-default-rtdb.asia-southeast1.firebasedatabase.app",
+
+projectId: "nextype-7b33e",
+
+storageBucket: "nextype-7b33e.firebasestorage.app",
+
+messagingSenderId: "872651348627",
+
+appId: "1:872651348627:web:4726ff2048d45d6c0a4b66",
+
+measurementId: "G-375N6GHXQY"
+
+};
+
+
+
+const app = initializeApp(firebaseConfig);
+
+
+const db = getFirestore(app);
+
+
+
+const stateRef = doc(db,"state","Nextype");
+
+
+
+onSnapshot(stateRef,(snap)=>{
+
+
+if(snap.exists()){
+
+
+let data=snap.data();
+
+
+document.getElementById("downloads").innerText =
+data.downloads || 0;
+
+
+document.getElementById("favorites").innerText =
+data.favorites || 0;
+
+
+}
+
+
+});
+
+
+
+
+// Download Counter
+
+document
+.getElementById("downloadBtn")
+.addEventListener("click",async()=>{
+
+
+let downloaded =
+localStorage.getItem("nextype_download");
+
+
+if(!downloaded){
+
+
+await updateDoc(
+stateRef,
+{
+downloads:increment(1)
+}
+);
+
+
+localStorage.setItem(
+"nextype_download",
+"true"
+);
+
+
+}
+
+
+});
+
+
+
+
+// Like Counter
+
+
+const likeBtn=document.getElementById("likeBtn");
+
+
+
+if(localStorage.getItem("nextype_like")){
+
+likeBtn.classList.add("active");
+
+likeBtn.innerHTML="❤️";
+
+}
+
+
+
+likeBtn.addEventListener("click",async()=>{
+
+
+if(localStorage.getItem("nextype_like")){
+
+return;
+
+}
+
+
+await updateDoc(
+
+stateRef,
+
+{
+
+favorites:increment(1)
+
+}
+
+);
+
+
+
+localStorage.setItem(
+"nextype_like",
+"true"
+);
+
+
+
+likeBtn.classList.add("active");
+
+
+likeBtn.innerHTML="❤️";
+
+
+});
+
+
+
+</script>
 
 
 </body>
